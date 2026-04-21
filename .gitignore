@@ -8,3 +8,4 @@ __pycache__/
 *.pdf
 *.docx
 *.txt
+!requirements.txt
