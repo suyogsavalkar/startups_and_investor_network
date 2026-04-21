@@ -30,7 +30,7 @@ class TestQueries(unittest.TestCase):
         self.assertEqual(path, [])
 
     def test_connected_companies_sorted_by_weight_descending(self):
-        """This because the Search page should show strongest related startups first."""
+        """The Search page should show strongest related startups first."""
         bundle = build_network(
             synthetic_startups(),
             min_investor_frequency=1,
@@ -45,7 +45,7 @@ class TestQueries(unittest.TestCase):
         self.assertEqual(list(neighbors["weight"]), [2, 1])
 
     def test_rank_startups_expected_columns_and_top_n_behavior(self):
-        """This because the Rankings page needs a stable table shape and limit behavior."""
+        """The Rankings page needs a stable table shape and limit behavior."""
         bundle = build_network(
             synthetic_startups(),
             min_investor_frequency=1,
@@ -66,7 +66,7 @@ class TestQueries(unittest.TestCase):
         self.assertEqual(len(ranked_min), 1)
 
     def test_path_edges_returns_correct_hop_details(self):
-        """This because the path display needs one row of investor details per hop."""
+        """The path display needs one row of investor details per hop."""
         bundle = build_network(
             synthetic_startups(),
             min_investor_frequency=1,
@@ -82,7 +82,7 @@ class TestQueries(unittest.TestCase):
         self.assertEqual(int(edge_df.iloc[0]["shared_investor_count"]), 1)
 
     def test_same_startup_path_returns_single_node_no_edges(self):
-        """This because selecting the same startup should not create a fake connection path."""
+        """Selecting the same startup should not create a fake connection path."""
         bundle = build_network(
             synthetic_startups(),
             min_investor_frequency=1,
@@ -97,7 +97,7 @@ class TestQueries(unittest.TestCase):
         self.assertTrue(edge_df.empty)
 
     def test_weighted_shortest_path_prefers_stronger_connection(self):
-        """weighted toggle should prefer stronger links, not just fewer hops."""
+        """The weighted toggle should prefer stronger links, not just fewer hops."""
         bundle = build_network(
             weighted_path_startups(),
             min_investor_frequency=1,
@@ -113,7 +113,7 @@ class TestQueries(unittest.TestCase):
         self.assertEqual(weighted, ["a", "c", "b"])
 
     def test_path_explanation_describes_every_hop(self):
-        """the explanation shown in the app should name the companies on the path."""
+        """The explanation shown in the app should name the companies on the path."""
         bundle = build_network(
             synthetic_startups(),
             min_investor_frequency=1,
