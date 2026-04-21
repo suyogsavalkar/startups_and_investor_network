@@ -31,6 +31,11 @@ def load_unified_startup_table(data_dir: str | Path | None = None) -> pd.DataFra
     startups_path = resolved_dir / CSV_STARTUPS
     unicorns_2021_path = resolved_dir / CSV_2021
 
+    if not startups_path.exists() and (resolved_dir / "data" / CSV_STARTUPS).exists():
+        startups_path = resolved_dir / "data" / CSV_STARTUPS
+    if not unicorns_2021_path.exists() and (resolved_dir / "data" / CSV_2021).exists():
+        unicorns_2021_path = resolved_dir / "data" / CSV_2021
+
     if not startups_path.exists():
         raise FileNotFoundError(f"Missing required CSV: {startups_path}")
     if not unicorns_2021_path.exists():
