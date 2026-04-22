@@ -162,29 +162,3 @@ The test suite is split into focused files:
 - `tests/helpers.py`: contains small synthetic datasets that make graph behavior easy to check by hand.
 
 The tests are meant to read like living documentation: they show what the graph is supposed to do, how edge cases behave, and how the app-facing helper functions should respond.
-
-## Rubric Alignment
-
-### Data & Architecture
-
-The project integrates two real CSV datasets and standardizes them into one startup table. The graph is not just an implementation detail; it is the main source of insight. Centrality, paths, shared-investor edges, and connected clusters reveal relationships that are not visible from a flat CSV.
-
-### Object-Oriented Design
-
-The project includes multiple domain classes with meaningful methods and clear relationships. The data loading, parsing, graph building, query logic, explanation logic, and Streamlit UI are separated into focused modules.
-
-### Interactivity & Interface
-
-The project includes a Streamlit app with four interaction modes and global filters. The interface is designed around the graph operations a user would naturally want: overview, startup search, path discovery, and rankings.
-
-### Testing
-
-The test suite contains 16 tests across data loading, graph construction, query behavior, path-finding, ranking, filtering, and domain objects. It covers both normal behavior and edge cases, including disconnected startups, same-startup paths, weak-edge filtering, and weighted path selection.
-
-### Ambition & Insight
-
-The project goes beyond listing startups and investors. It treats the investment ecosystem as a network and uses graph algorithms to show ecosystem structure, startup centrality, shared-backer relationships, and paths between companies.
-
-## Notes
-
-This project does not use an LLM or any AI-generation API in the final submitted app. The path explanation feature is deterministic and generated locally from the graph path and shared-investor metadata.
