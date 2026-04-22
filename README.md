@@ -128,16 +128,6 @@ The main deployment entry point is:
 streamlit_app.py
 ```
 
-## Streamlit Cloud Deployment
-
-Use these settings on Streamlit Community Cloud:
-
-- Repository: `suyogsavalkar/startups_and_investor_network`
-- Branch: `main`
-- Main file path: `streamlit_app.py`
-
-The app does not require API keys or secrets.
-
 ## Testing
 
 Run the full test suite:
