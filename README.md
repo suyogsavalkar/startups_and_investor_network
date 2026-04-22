@@ -110,6 +110,12 @@ Global sidebar filters:
 
 ## Running the App
 
+Clone the repository:
+
+```bash
+git clone https://github.com/suyogsavalkar/startups_and_investor_network.git
+```
+
 Install dependencies:
 
 ```bash
